@@ -8,4 +8,5 @@ const users: User[] = [
   { name: "Bob", age: 25 },
 ];
 
-users.push({ name: "Oleksa", age: 20 });
+users.push({ name: "Oleksa", age: 34 });
+console.log(users);
