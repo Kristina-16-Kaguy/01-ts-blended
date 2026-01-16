@@ -18,3 +18,24 @@
 
 // toUserObjects(users);
 // Повертає: [{ id: 1, name: "alice" }, { id: 2, name: "bob" }, { id: 3, name: "charlie" }]
+
+interface User {
+  id: number;
+  name: string;
+}
+
+const users = ["alice", "bob", "charlie"];
+
+function toUserObjects(names: string[]) {
+  let id = 1;
+  const result: User[] = [];
+
+  for (const name of names) {
+    result.push({ id, name });
+    id++;
+  }
+
+  return result;
+}
+
+console.log(toUserObjects(users));
