@@ -16,3 +16,33 @@
 // Примітка:
 
 // Контейнер має підтримувати тільки один тип елементів.
+interface Container<T> {
+  items: T[];
+  addItem: (item: T) => void;
+  getItem: (index: number) => T;
+}
+
+const numberContainer: Container<number> = {
+  items: [1, 2, 3],
+  addItem(item) {
+    this.items.push(item);
+  },
+  getItem(index) {
+    return this.items[index];
+  },
+};
+numberContainer.addItem(4);
+console.log(numberContainer.getItem(2));
+
+console.log(numberContainer.items);
+
+const stringContainer: Container<string> = {
+  items: ["Oleksa", "Kris", "Ann"],
+  addItem(item) {
+    this.items.push(item);
+  },
+  getItem(index) {
+    return this.items[index];
+  },
+};
+console.log(stringContainer.items);
