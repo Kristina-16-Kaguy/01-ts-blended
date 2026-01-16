@@ -10,7 +10,11 @@
 // яка приймає рядок і повертав void.
 
 function sendDoneStatus(callback: (s: string) => void): void {
-  callback("done");
+  callback("Herring");
 }
 
-sendDoneStatus(console.log);
+function heil(name: string) {
+  console.log(`Heil, ${name}`);
+}
+
+sendDoneStatus(heil);
