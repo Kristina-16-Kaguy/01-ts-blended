@@ -5,7 +5,7 @@
 // Оголосіть інтерфейс User для користувача (перевірте, які властивості користувача містяться у відповіді бекенда).
 // Типізуйте функцію fetchUsers.
 
-interface Adress {
+interface Address {
   street: string;
   suite: string;
   city: string;
@@ -25,8 +25,9 @@ interface Company {
 interface User {
   id: number;
   name: string;
+  username: string;
   email: string;
-  adress: Adress;
+  adress: Address;
   phone: string;
   website: string;
   company: Company;
