@@ -24,16 +24,20 @@
 type User = {
   username: string;
   age: number;
-  city: string;
+  city?: string;
 };
 
 type Role = "admin" | "user" | "guest";
 
 function createUserCard(user: User, role: Role): string {
-    return "[username] ([age]) — [role] from [city]”
+  let city = user.city === undefined ? "Unknown" : user.city;
+
+  return `${user.username} (${user.age}) — ${role} from ${city}`;
 }
 
-console.log(createUserCard({ username: "Anna", age: 25, city: "Kyiv" }, "admin"));
+console.log(
+  createUserCard({ username: "Anna", age: 25, city: "Kyiv" }, "admin")
+);
 // Anna (25) — admin from Kyiv
 
 console.log(createUserCard({ username: "Max", age: 30 }, "guest"));
