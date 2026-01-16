@@ -46,3 +46,10 @@ const stringContainer: Container<string> = {
   },
 };
 console.log(stringContainer.items);
+
+function getLastElement<T>(container: Container<T>): T {
+  return container.items[container.items.length - 1];
+}
+
+console.log(getLastElement(numberContainer));
+console.log(getLastElement(stringContainer));
